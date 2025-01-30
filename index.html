@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Drive Direct Link Generator</title>
+  <style>
+    body {
+
+      background-color: #f4f4f4;
+      width: 100%;
+
+    }
+
+    .MainBody {
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input,
+    button {
+      padding: 12px;
+      margin: 10px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Text center align */
+      text-align: center;
+      gap: 5px;
+      width: 100%;
+      /* Ensuring proper button size */
+    }
+
+    .output-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .link-box {
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .copy-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .copy-btn:hover {
+      background: #0056b3;
+    }
+
+    .go-btn {
+      background: #28a745;
+      color: white;
+    }
+
+    .go-btn:hover {
+      background: #218838;
+    }
+
+    .go-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+  </style>
+</head>
+<header>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+    }
+
+    header {
+      width: 100vw;
+      background-color: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "HeadImage HeadName"
+        "HeadImage HeadIm";
+    }
+
+    .HeadImage {
+      grid-area: HeadImage;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    #HeaderImage {
+      width: 80px;
+      margin: 5px 10px 5px 5px;
+      border-radius: 50%;
+    }
+
+
+    .HeadName {
+      grid-area: HeadName;
+      display: flex;
+      justify-content: left;
+      align-items: end;
+    }
+
+    .HeadIm {
+      grid-area: HeadIm;
+      display: flex;
+    }
+
+    .HeadImSpan {
+      position: relative;
+      color: #01fe87;
+      animation: displayText 9s infinite;
+      animation-delay: calc(-3s * var(--i));
+    }
+
+    @keyframes displayText {
+
+      0% {
+        display: inline-block;
+      }
+
+      33.33%,
+      100% {
+        display: none;
+      }
+
+
+    }
+  </style>
+
+  <div class="HeadImage">
+
+    <a href="https://shahid24x7.free.nf/"><img id="HeaderImage" src="https://shahid24x7free02.github.io/media/my-photo.jpg" alt="my photo"></a>
+  </div>
+  <div class="HeadName">
+    <h2>Hello, I'm SHAHID.</h2>
+  </div>
+  <div class="HeadIm">
+    <h2>I'm a
+      <span class="HeadImSpan" style="--i:0;" data-text="Coder.">Coder.</span>
+      <span class="HeadImSpan" style="--i:1;" data-text="AffiliateMarketer.">Affiliate Marketer.</span>
+      <span class="HeadImSpan" style="--i:2;" data-text="FinancialAdviser.">Financial Adviser.</span>
+    </h2>
+  </div>
+</header>
+
+<body>
+  <div class="MainBody">
+
+
+    <div class="container">
+      <h2 style="display: flex;
+        align-items: center;
+        justify-content: center;">Google Drive Direct Link Generator</h2>
+      <input type="text" id="driveLink" placeholder="Enter Google Drive File Link">
+      <button onclick="generateLink()">Generate Link</button>
+    </div>
+    <div id="outputContainer"></div>
+
+    <div class="NotesCoun">
+      <h1> Notes </h1>
+      <p style="height: 2px; background: #28a745; width: 100%; margin: 2px;"></p>
+      <h4> 1. By converting a Google Drive file link to a direct download link, you can bypass unwanted pages that open when clicking on the link. This works on any desktop or mobile platform
+      </h4>
+      <p style="height: 2px; background: #28a745; width: 100%; margin: 2px;"></p>
+      <h4> 2. Right-click the file or image you want to share and navigate to Share > Share > allow anyone access to the file if they have the link. Copy the link to your clipboard </h3>
+        <p style="height: 2px; background: #28a745; width: 100%; margin: 2px;"></p>
+        <h4> 3. This only works for uploaded files, not documents created in Google Docs/Sheets/Slides. </h4>
+
+        <style>
+          .NotesCoun {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            max-width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+        </style>
+    </div>
+    <div class="BlogContainer" style="max-width: 800px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <h1 style="color: #333;
+text-align: center;">Google Drive Direct Link Generation: New Method in 2025</h1>
+
+      <p style="color: #555; line-height: 1.6;">For a long time, Google Drive allowed users to generate direct download links by modifying the URL format. However, Google has now <b>disabled the old direct link method</b>, making it necessary to use a new approach.</p>
+
+      <h2 style="color: #28a745;">Why Did the Old Google Drive Direct Link Stop Working?</h2>
+      <p style="color: #555; line-height: 1.6;">Previously, users could create a direct download link using a simple modification in the URL. However, Google <b>restricted this method</b> to enhance security and prevent automated downloads. Now, old direct links often lead to errors or redirections.</p>
+
+      <h2 style="color: #28a745;">New Google Drive Direct Download Link Format</h2>
+      <p style="color: #555; line-height: 1.6;">To generate a working direct download link, use the following format:</p>
+
+      <div class="code-box">
+        https://drive.usercontent.google.com/download?id=<b>FILE_ID</b>&export=download
+      </div>
+
+      <h2 style="color: #28a745;">How to Get the File ID from a Google Drive Link?</h2>
+      <p style="color: #555; line-height: 1.6;">To extract the file ID from a shared Google Drive link, look for the part after <b>/d/</b> or <b>id=</b> in the URL.</p>
+
+      <p style="color: #555; line-height: 1.6;"><b>Example:</b></p>
+      <div class="code-box">
+        Original Google Drive Link: <br>
+        <i>https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing</i>
+      </div>
+
+      <p style="color: #555; line-height: 1.6;"><b>File ID:</b> <span class="code-box">1A2B3C4D5E6F7G8H9I0J</span></p>
+
+      <p style="color: #555; line-height: 1.6;"><b>New Direct Download Link:</b></p>
+      <div class="code-box">
+        https://drive.usercontent.google.com/download?id=1A2B3C4D5E6F7G8H9I0J&export=download
+      </div>
+
+      <h2 style="color: #28a745;">How to Use the New Direct Link?</h2>
+      <ul>
+        <li>You can share this new link to allow users to download files directly.</li>
+        <li>It works well for embedding in websites, scripts, and automated downloads.</li>
+        <li>Unlike the old method, this format is more stable and secure.</li>
+      </ul>
+
+      <h2 style="color: #28a745;">Conclusion</h2>
+      <p style="color: #555; line-height: 1.6;">Although the old direct download method has been disabled, the new <b>Google Drive Usercontent URL</b> provides a secure and reliable way to generate direct download links. If you're using Google Drive to share files, make sure to use the updated format.</p>
+
+      <p style="color: #555; line-height: 1.6;">For easy generation, you can use our <b>Google Drive Direct Link Generator Tool</b>, which automatically converts your Google Drive links into direct download links.</p>
+
+      <style>
+        .code-box {
+          background: #f8f9fa;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 14px;
+          font-family: monospace;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          border-left: 4px solid #28a745;
+        }
+      </style>
+    </div>
+  </div>
+  <script>
+    function extractFileId(url) {
+      let match = url.match(/(?:\/d\/|id=)([a-zA-Z0-9_-]{25,})/);
+      return match ? match[1] : null;
+    }
+
+    function generateLink() {
+      let inputField = document.getElementById("driveLink");
+      let inputLink = inputField.value.trim();
+      let fileId = extractFileId(inputLink);
+      let outputContainer = document.getElementById("outputContainer");
+
+      if (fileId) {
+        let downloadUrl = `https://drive.usercontent.google.com/download?id=${fileId}&export=download`;
+
+        outputContainer.innerHTML = `
+                 
+                    <div class="output-box">
+                         <h2>Generated Link</h2>
+                        <div class="link-box" id="generatedLink">${downloadUrl}</div>
+                        <div class="buttons">
+                            <button class="copy-btn" onclick="copyLink()">Copy Link</button>
+                            <button class="go-btn" onclick="window.open('${downloadUrl}', '_blank')">
+                                Go <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Interface / External_Link">
+                                        <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+        inputField.value = ""; // Input field clear karna
+      } else {
+        outputContainer.innerHTML = `<p style="color: red;">Invalid Google Drive link!</p>`;
+      }
+    }
+
+    function copyLink() {
+      let linkText = document.getElementById("generatedLink").innerText;
+      navigator.clipboard.writeText(linkText).then(() => {
+        alert("Link copied!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    }
+  </script>
+
+
+</body>
+<footer>
+  <!-- Footer Section Main -->
+
+  <div class="ContactForm">
+
+    <h2>Contact Us</h2>
+    <form id="dataForm">
+      <div class="dataFormItem">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="button" onclick="sendEmail()">Submit</button>
+      </div>
+    </form>
+    <!-- Footer Section -->
+    <div class="footer">
+      <p id="copyright"></p>
+    </div>
+  </div>
+
+  <style>
+    /* ----------footer-----------*/
+    .ContactForm {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    .ContactForm h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #dataForm {
+
+      justify-content: center;
+      align-items: center;
+      display: flex;
+
+    }
+
+    .dataFormItem {
+      max-width: 350px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 350px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+
+  <script>
+    //-------footer-----//
+
+
+
+    function sendEmail() {
+      var name = document.getElementById("name").value;
+      var userEmail = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      var mailtoLink = "mailto: shahid24x7free@gmail.com" +
+        "?subject=Form%20Submission" +
+        "&body=" +
+        "Name%3A%20" + encodeURIComponent(name) + "%0D%0A" +
+        "User%20Email%3A%20" + encodeURIComponent(userEmail) + "%0D%0A" +
+        "Message%3A%20" + encodeURIComponent(message);
+
+      window.location.href = mailtoLink;
+    }
+    // JavaScript to dynamically set the current year
+    const currentYear = new Date().getFullYear();
+    const authorName = "SHAHID";
+    document.getElementById("copyright").innerHTML = `&copy; ${currentYear} ${authorName}. All rights reserved.`;
+  </script>
+</footer>
+
+</html>
