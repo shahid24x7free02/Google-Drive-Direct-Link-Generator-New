@@ -12,6 +12,11 @@
 
 ---
 
+## 🌐 Try It Now!  
+[![🚀 Visit My Website](https://img.shields.io/badge/🔗_Try%20Now%20!-blue?style=for-the-badge)](https://shahid24x7free02.github.io/Google-Drive-Direct-Link-Generator-New/)
+
+---
+
 ## 🛠️ How It Works?
 1. **Paste your Google Drive link**  
 2. **Click the "Generate" button**  
@@ -23,10 +28,6 @@ Direct Download: https://drive.usercontent.google.com/download?id=1A2B3C4D5E6F7G
 
 ---
 
-## 🌐 Try It Now!  
-[![🚀 Visit My Website](https://img.shields.io/badge/🔗_Try%20Now%20!-blue?style=for-the-badge)](YOUR_WEBSITE_URL)
-
----
 
 ## 📜 Why This Tool?  
 Google has **disabled the old direct link method**, so this tool helps you generate working **direct download links** with the latest method.
