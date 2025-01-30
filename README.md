@@ -48,7 +48,7 @@ Google has **disabled the old direct link method**, so this tool helps you gener
 ⭐ **Star this repository** if you find it useful!  
 💬 **Have suggestions?** Open an issue or contribute via PRs.  
 
-📧 **Need Help?** Contact me on [GitHub Discussions](https://github.com/YOUR_GITHUB/discussions)
+📧 **Need Help?** Contact me on [GitHub Discussions](https://github.com/shahid24x7free02/discussions)
 
 ---
 
